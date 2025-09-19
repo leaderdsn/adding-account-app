@@ -1,0 +1,61 @@
+@use '@/styles/variables' as *
+@use '@/styles/mixins' as *
+
+.app-header
+  width: 100%
+  background: $bg-color
+  @include box-shadow
+
+  .container
+    margin: 0 auto
+    padding: 0.5rem 1rem
+    display: flex
+    justify-content: start
+    align-items: center
+    gap: 1rem
+
+  &__button-add
+    padding: 0
+    height: 55px
+    width: 55px
+    position: relative
+    transition: all 0.3s ease
+
+    &.dynamic
+      @include box-shadow-error-button
+      border-color: transparent
+      animation: bounce 2s infinite
+
+      &::before
+        content: '↑ добавьте первую запись!'
+        position: absolute
+        bottom: -35px
+        right: -148px
+        color: $error-color
+        font-size: 14px
+        font-weight: 500
+        white-space: nowrap
+
+@keyframes bounce
+  0%, 20%, 50%, 80%, 100%
+    transform: translateY(0)
+  40%
+    transform: translateY(-5px)
+  60%
+    transform: translateY(-3px)
+
+@include responsive($breakpoint-lg)
+  .app-header
+    .container
+      padding: 0.5rem 1rem
+
+@include responsive($breakpoint-sm)
+  .app-header
+    &__button-add
+      &.dynamic::before
+        content: 'Добавьте первую запись ↑'
+        right: 0
+        left: -145px
+        bottom: -40px
+        text-align: center
+        font-size: 12px

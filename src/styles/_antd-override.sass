@@ -1,0 +1,16 @@
+@use 'variables' as *
+@use 'sass:color'
+
+:root
+  --ant-primary-color: #{$primary-color}
+  --ant-success-color: #{$success-color}
+  --ant-warning-color: #{$warning-color}
+  --ant-error-color: #{$error-color}
+
+.ant-btn-primary
+  background: $primary-color
+  border-color: $primary-color
+
+  &:hover
+    background: color.adjust($primary-color, $lightness: -10%)
+    border-color: color.adjust($primary-color, $lightness: -10%)

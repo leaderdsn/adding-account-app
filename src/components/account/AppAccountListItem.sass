@@ -1,0 +1,96 @@
+@use '@/styles/variables' as *
+@use '@/styles/mixins' as *
+
+.app-account-list-item
+  display: grid
+  grid-template-columns: 1fr max-content
+  gap: $spacing-md
+  margin: 0
+  padding: 0
+  list-style: none
+  width: 100%
+
+  &__button
+    padding: 0
+    height: fit-content
+    align-self: start
+
+  &__fields
+    display: flex
+    flex-direction: row
+    justify-content: start
+    gap: $spacing-md
+    width: 100%
+
+    :deep(.ant-form-item)
+      display: flex
+      align-content: flex-start
+      min-width: 0
+      height: fit-content
+      width: 100%
+      max-width: 270px
+      margin: 0
+
+      .ant-form-item-row
+        width: 100%
+
+    :deep(.ant-form-item-control)
+      width: 100%
+
+    :deep(.ant-form-item-control-input)
+      flex: 1
+
+    :deep(.ant-input),
+    :deep(.ant-input-password),
+    :deep(.ant-select)
+      width: 100%
+
+  &.without-password &__fields
+    .ant-form-item:last-child
+      max-width: 100%
+      margin-right: $spacing-xs
+      min-width: 0
+      flex: 1
+
+@include responsive($breakpoint-xl)
+  .app-account-list-item
+    border-bottom: 1px solid $border-color
+    padding-bottom: $spacing-md
+
+    &__fields
+      :deep(.ant-form-item)
+        max-width: 405px
+
+    &.without-password &__fields
+      :deep(.ant-form-item:last-child)
+        max-width: 100%
+        min-width: 0
+        margin-right: $spacing-sm
+
+@include responsive($breakpoint-lg)
+  .app-account-list-item
+    &__fields
+      :deep(.ant-form-item)
+        max-width: 100%
+
+    &.without-password &__fields
+      :deep(.ant-form-item:last-child)
+        max-width: 100%
+        min-width: 100%
+        margin-right: 0
+
+@include responsive($breakpoint-md)
+  .app-account-list-item
+    grid-template-columns: 1fr
+    gap: $spacing-sm
+
+    &__button
+      justify-self: end
+      margin-top: $spacing-xs
+
+    &__fields
+      flex-direction: column
+      gap: $spacing-sm
+
+      :deep(.ant-form-item)
+        margin-right: 0
