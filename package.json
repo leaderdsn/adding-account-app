@@ -10,10 +10,6 @@
     "lint": "eslint . --fix",
     "lint:check": "eslint ."
   },
-  "engines": {
-    "node": "18.x",
-    "npm": "8.x"
-  },
   "dependencies": {
     "@ant-design/icons-vue": "^7.0.1",
     "ant-design-vue": "^4.2.6",
