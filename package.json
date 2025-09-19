@@ -5,11 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "export NODE_OPTIONS=--openssl-legacy-provider && nuxt build",
-    "prebuild": "npm install -g node@18.20.0",
+    "build": "vue-tsc -b && vite build",
     "preview": "vite preview",
     "lint": "eslint . --fix",
     "lint:check": "eslint ."
+  },
+  "engines": {
+    "node": "18.x",
+    "npm": "8.x"
   },
   "dependencies": {
     "@ant-design/icons-vue": "^7.0.1",
