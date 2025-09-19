@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc -b && vite build",
+    "build": "export NODE_OPTIONS=--openssl-legacy-provider && nuxt build",
+    "prebuild": "npm install -g node@18.20.0",
     "preview": "vite preview",
     "lint": "eslint . --fix",
     "lint:check": "eslint ."
