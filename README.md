@@ -2,7 +2,7 @@
 Приложение для создания учётных записей
 
 ### Демонстрация работы приложения: 
-https://my-vue-task-manager.netlify.app/
+https://adding-account-app.netlify.app/
 
 1. Установка
 yarn install
